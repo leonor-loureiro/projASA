@@ -20,8 +20,8 @@ Graph::Graph(int v){
 	adj = new list<int>[v];
 }
 
-void Graph::InsertE(int v, int w){
-	adj[v].push_front(w);      
+void Graph::InsertE(int w, int v){
+	adj[w].push_back(v);     
 }
 
 vector<int> Graph::InDegree(){
