@@ -5,12 +5,18 @@ using namespace  std;
 
 class Graph{
 	private:
-		int V;
-		list<int> *adj;
-		vector<int> InDegree();
+		int V;           // numeber of vertices
+		list<int> *adj;  // array of adjacency lists
+		int *indegree;   // array with the indegree of each vertice
 	public:
+
+		/* Constructor */
 		Graph(int v);
+
+		/* Add an edge from vertice v to vertice w */
 		void InsertE(int v, int w);
+
+		/* Prints the topological order of the graph's vertices */
 		void TopologicalSort();
 
 };
@@ -18,42 +24,40 @@ class Graph{
 Graph::Graph(int v){
 	V = v;
 	adj = new list<int>[v];
+	indegree = new int[v];
+	for(int i = 0; i < v; i++)
+		indegree[i]=0;
 }
 
 void Graph::InsertE(int w, int v){
-	adj[w].push_back(v);     
+	adj[w].push_back(v); 
+	indegree[v]++;
 }
 
-vector<int> Graph::InDegree(){
-	vector<int> indegree (V,0);
-	for(int k = 0; k < V; k++){
 
-		for(list<int>::iterator i = adj[k].begin(); i != adj[k].end(); i++)
-	    	indegree[*i]++;
-
-	}
-	return indegree;
-
-}
 void Graph::TopologicalSort(){
-
+	
 	/* Cria um vetor para registar o resultado da ordenacao */
 	vector<int> order;
 
-	/* Cria uma fila de espera */
+	/* Armazena o vertice sem arcos de entrada */
 	queue<int> queue;
 
-	/* Cria um vetor em que guarda o numero de
-	 * arcos de entrada de cada vertice do grafo */
-	vector<int> indegree = InDegree();
+	/* Flag para insufficient*/
+	bool insufficient = false;
 
 	/* Adiciona a lista de espera todos os verices sem arcos
 	 * de entrada */		
 	for(int i = 0; i < V; i++)
-		if(indegree[i] == 0)
+		if(indegree[i] == 0){
+			if (!queue.empty()){
+				insufficient = true;
+			}
 			queue.push(i);
+		}
+			
 
-	int cnt_visit = 0;     // Indica o numero de vertices visitados
+	int cnt_visit = 1;     // Indica o numero de vertices visitados
 
 	/* Retira, um a um os vertices da fila de espera e adiciona
 	 * os vertices adjacente quando o seu in degree atinge o zero */
@@ -68,11 +72,22 @@ void Graph::TopologicalSort(){
 		/*Itera os todos vertices adjacentes ao vertice x e
 		 * decrementa o seu indegree numa unidade */
 		for(list<int>::iterator i = adj[x].begin(); i!=adj[x].end(); i++){
-			if(--indegree[*i] == 0)
+			if(--indegree[*i] == 0){
+				if(!queue.empty()){
+					insufficient = true;
+				}
 				queue.push(*i);
+			}
 			cnt_visit++;
 		}
 		
+	}
+
+	
+	/* Verifica se o grafo nao tem uma unica ordenacao possivel */
+	if(insufficient){
+		cout << "Insuficiente" << endl;
+		return;
 	}
 
 	/* Verifica se encontrou um ciclo */
@@ -91,14 +106,11 @@ void Graph::TopologicalSort(){
 
 int main(int argc, char const *argv[])
 {
-	Graph g(6);
-    g.InsertE(5, 2);
-    g.InsertE(5, 0);
-    g.InsertE(4, 0);
-    g.InsertE(4, 1);
+	Graph g(4);
+    g.InsertE(0, 1);
+    g.InsertE(1, 2);
     g.InsertE(2, 3);
-    g.InsertE(3, 1);
- 
+
     cout << "Following is a Topological Sort of\n";
     g.TopologicalSort();
 	return 0;
