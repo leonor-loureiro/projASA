@@ -1,25 +1,15 @@
 #include <iostream>
-#include <list>
-#include <queue>
+#include "graph.hpp"
 using namespace  std;
 
-class Graph{
-	private:
-		int V;           // numeber of vertices
-		list<int> *adj;  // array of adjacency lists
-		int *indegree;   // array with the indegree of each vertice
-	public:
 
-		/* Constructor */
-		Graph(int v);
 
-		/* Add an edge from vertice v to vertice w */
-		void InsertE(int v, int w);
+Edge::Edge(int pre, int suc){
+	predecessor = pre;
+	successor = suc;
+}
 
-		/* Prints the topological order of the graph's vertices */
-		void TopologicalSort();
 
-};
 
 Graph::Graph(int v){
 	V = v;
@@ -29,14 +19,14 @@ Graph::Graph(int v){
 		indegree[i]=0;
 }
 
-void Graph::InsertE(int w, int v){
-	adj[w].push_back(v); 
-	indegree[v]++;
+void Graph::insertEdge(Edge e){
+	adj[e.predecessor].push_back(e.successor);
+	indegree[e.successor]++;
 }
 
 
-void Graph::TopologicalSort(){
-	
+vector<int> Graph::topologicalSort(){
+
 	/* Cria um vetor para registar o resultado da ordenacao */
 	vector<int> order;
 
@@ -47,17 +37,21 @@ void Graph::TopologicalSort(){
 	bool insufficient = false;
 
 	/* Adiciona a lista de espera todos os verices sem arcos
-	 * de entrada */		
-	for(int i = 0; i < V; i++)
+	 * de entrada */
+	for(int i = 0; i < V; i++){
+		cout<< "grau de"<< i+1 << ":" <<indegree[i] << '\n';
+
 		if(indegree[i] == 0){
 			if (!queue.empty()){
 				insufficient = true;
 			}
 			queue.push(i);
+			cout << i<<'\n';
 		}
-			
+	}
 
-	int cnt_visit = 1;     // Indica o numero de vertices visitados
+
+	int cnt_visit = 0;     // Indica o numero de vertices visitados
 
 	/* Retira, um a um os vertices da fila de espera e adiciona
 	 * os vertices adjacente quando o seu in degree atinge o zero */
@@ -68,7 +62,7 @@ void Graph::TopologicalSort(){
 		int x = queue.front();
 		queue.pop();
 		order.push_back(x);
-	
+
 		/*Itera os todos vertices adjacentes ao vertice x e
 		 * decrementa o seu indegree numa unidade */
 		for(list<int>::iterator i = adj[x].begin(); i!=adj[x].end(); i++){
@@ -77,41 +71,26 @@ void Graph::TopologicalSort(){
 					insufficient = true;
 				}
 				queue.push(*i);
+				cout << *i << '\n';
 			}
 			cnt_visit++;
 		}
-		
+
 	}
 
-	
+
 	/* Verifica se o grafo nao tem uma unica ordenacao possivel */
 	if(insufficient){
 		cout << "Insuficiente" << endl;
-		return;
+		return vector<int> ();
 	}
 
 	/* Verifica se encontrou um ciclo */
 	if(cnt_visit!=V){
 		cout << "Incoerente" << endl;
-		return;
+		return vector<int> ();
 	}
-
+	return order;
 	/*Imprimir a ordem topologica */
-	for(int i = 0; i < V; i++){
-		cout << order[i] << " " ;
-	}
-	cout << endl;
 
-}
-
-int main(int argc, char const *argv[])
-{
-	Graph g(4);
-    g.InsertE(0, 1);
-    g.InsertE(1, 2);
-    g.InsertE(2, 3);
-
-    cout << "Following is a Topological Sort of\n";
-    g.TopologicalSort();
-	return 0;
 }

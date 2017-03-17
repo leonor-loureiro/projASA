@@ -1,12 +1,9 @@
-CFLAGS = -Wall
+CFLAGS = -pedantic -O3 -ansi -Wall -lm
 
-all: graph run
+all: input
 
 run:
-	./graph.o
+	./inputProcess.o
 
-graph:  graph.cpp
-		g++ $(CFLAGS) graph.cpp -o graph.o
-
-clean:
-		rm graph.o
+input: graph.cpp graph.hpp inputProcess.cpp
+	g++  $(CFLAGS) -o inputProcess.o inputProcess.cpp graph.cpp
