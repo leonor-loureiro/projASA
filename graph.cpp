@@ -51,7 +51,7 @@ vector<int> Graph::topologicalSort(){
 	}
 
 
-	int cnt_visit = 0;     // Indica o numero de vertices visitados
+	int cnt_visit = 1;     // Indica o numero de vertices visitados
 
 	/* Retira, um a um os vertices da fila de espera e adiciona
 	 * os vertices adjacente quando o seu in degree atinge o zero */
