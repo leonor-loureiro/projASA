@@ -48,8 +48,6 @@ vector<int> Graph::topologicalSort(){
 				insufficient = true;
 			}
 			queue.push(i);
-			cnt_visit++;
-			//cout << cnt_visit<< '\n';
 
 		}
 	}
@@ -66,6 +64,7 @@ vector<int> Graph::topologicalSort(){
 		int x = queue.front();
 		queue.pop();
 		order.push_back(x);
+		cnt_visit++;           //incrementa o numero de vertices visitados
 
 		/*Itera os todos vertices adjacentes ao vertice x e
 		 * decrementa o seu indegree numa unidade */
@@ -75,7 +74,7 @@ vector<int> Graph::topologicalSort(){
 					insufficient = true;
 				}
 				queue.push(*i);
-				cnt_visit++;
+				
 				//cout << cnt_visit<< '\n';
 			}
 			
@@ -83,6 +82,11 @@ vector<int> Graph::topologicalSort(){
 
 	}
 
+	/* Verifica se encontrou um ciclo */
+	if(cnt_visit!=V){
+		cout << "Incoerente" << endl;
+		return vector<int> ();
+	}
 
 	/* Verifica se o grafo nao tem uma unica ordenacao possivel */
 	if(insufficient){
@@ -90,12 +94,5 @@ vector<int> Graph::topologicalSort(){
 		return vector<int> ();
 	}
 
-	/* Verifica se encontrou um ciclo */
-	if(cnt_visit!=V){
-		cout << "Incoerente" << endl;
-		return vector<int> ();
-	}
 	return order;
-	/*Imprimir a ordem topologica */
-
 }
