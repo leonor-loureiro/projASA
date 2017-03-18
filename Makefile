@@ -3,7 +3,10 @@ CFLAGS = -pedantic -O3 -ansi -Wall -lm
 all: input
 
 run:
-	./inputProcess.o
+	./main.o
 
-input: graph.cpp graph.hpp inputProcess.cpp
-	g++  $(CFLAGS) -o inputProcess.o inputProcess.cpp graph.cpp
+input: graph.cpp graph.hpp main.cpp
+	g++  $(CFLAGS) -o main.o main.cpp graph.cpp
+
+clean:
+	rm -f *.o
