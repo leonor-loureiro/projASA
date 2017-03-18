@@ -36,22 +36,26 @@ vector<int> Graph::topologicalSort(){
 	/* Flag para insufficient*/
 	bool insufficient = false;
 
+	int cnt_visit = 0;     // Indica o numero de vertices visitados
+
+
 	/* Adiciona a lista de espera todos os verices sem arcos
 	 * de entrada */
 	for(int i = 0; i < V; i++){
-		cout<< "grau de"<< i+1 << ":" <<indegree[i] << '\n';
 
 		if(indegree[i] == 0){
 			if (!queue.empty()){
 				insufficient = true;
 			}
 			queue.push(i);
-			cout << i<<'\n';
+			cnt_visit++;
+			//cout << cnt_visit<< '\n';
+
 		}
 	}
 
 
-	int cnt_visit = 1;     // Indica o numero de vertices visitados
+	
 
 	/* Retira, um a um os vertices da fila de espera e adiciona
 	 * os vertices adjacente quando o seu in degree atinge o zero */
@@ -71,9 +75,10 @@ vector<int> Graph::topologicalSort(){
 					insufficient = true;
 				}
 				queue.push(*i);
-				cout << *i << '\n';
+				cnt_visit++;
+				//cout << cnt_visit<< '\n';
 			}
-			cnt_visit++;
+			
 		}
 
 	}
