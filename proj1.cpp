@@ -17,8 +17,8 @@ using namespace  std;
  */
 class Edge{
 	public:
-    	int predecessor; //vertex from which edge originates from
-    	int successor; // vertex to which the edge is going to
+    	int predecessor;	//vertex from which edge originates from
+    	int successor;		// vertex to which the edge is going to
 
 		/**
 		 * Default consctructor
@@ -31,13 +31,13 @@ class Edge{
 
 /**
  * Structure used to model relations between 2 pairs
- * This implementation of a directional graph is made through an adjancy list
+ * This implementation of a directional graph is made through an adjacency list
  */
 class Graph{
 	private:
-		int V;           // number of vertices
-		list<int> *adj;  // array of adjacency lists
-		int *indegree;   // array with the indegree of each vertex
+		int nrOfVertices;           // number of vertices
+		list<int> *adjacencyLists;  // array of adjancy lists
+		int *indegree;   			// array with the indegree of each vertex
 	public:
 
 		/**
@@ -109,7 +109,7 @@ int main(int argc, char const *argv[]) {
 	/* prints ordered vector */
     for( i = 0; i < nrOfPhotos-1; i++)
 		cout << order[i]+1 << " " ;
-	cout << order[i]+1<<'\n';
+	cout << order[i]+1 <<'\n';
 
     return 0;
 }
@@ -126,56 +126,56 @@ Edge::Edge(int pre, int suc){
 
 
 Graph::Graph(int v){
-	V = v;
-	adj = new list<int>[v];
+	nrOfVertices = v;
+	adjacencyLists = new list<int>[v];
 	indegree = new int[v];
 	for(int i = 0; i < v; i++)
-		indegree[i]=0;
+		indegree[i] = 0;
 }
 
 void Graph::insertEdge(Edge e){
-	adj[e.predecessor].push_back(e.successor);
+	adjacencyLists[e.predecessor].push_back(e.successor);
 	indegree[e.successor]++;
 }
 
 
 vector<int> Graph::topologicalSort(){
 
-	vector<int> order; //Topologic Ordered vector
-	queue<int> queue; // Stores vertices with 0 indegree
-	bool insufficient = false; // status flag for insufficiente error found
-	int cnt_visit = 0; // counter of visited vertices
+	vector<int> order; 			//Topologic Ordered vector
+	queue<int> sourceVertices; 	// Stores vertices with 0 indegree
+	bool insufficient = false;	// status flag for insufficiente error found
+	int visitedVertices = 0;	// counter of visited vertices
 
-	/* adds all the vertices with 0 indegree to the queue*/
-	for(int i = 0; i < V; i++){
+	/* adds all the vertices with 0 indegree to the sourceVertices*/
+	for(int i = 0; i < nrOfVertices; i++){
 		if(indegree[i] == 0){
-			if (!queue.empty())
+			if (!sourceVertices.empty())
 				insufficient = true;
-			queue.push(i);
+			sourceVertices.push(i);
 		}
 	}
 
-	while(!queue.empty()){
+	while(!sourceVertices.empty()){
 
 		/* Removes the first element with 0 indegree and adds to ordered vector*/
-		int vertex = queue.front();
-		queue.pop();
+		int vertex = sourceVertices.front();
+		sourceVertices.pop();
 		order.push_back(vertex);
-		cnt_visit++;
+		visitedVertices++;
 
-		/* Decreses the all the indegrees of the vertices adjacents to the
-		 * current vertex, if one of them reaches 0 indegree, adds it to queue */
-		for(list<int>::iterator i = adj[vertex].begin(); i!=adj[vertex].end(); i++){
+		/* Decreses the indegrees of the vertices adjacent to the current vertex,
+		 * if one of them reaches 0 indegree, adds it to sourceVertices */
+		for(list<int>::iterator i = adjacencyLists[vertex].begin(); i!=adjacencyLists[vertex].end(); i++){
 			if(--indegree[*i] == 0){
-				if(!queue.empty())
+				if(!sourceVertices.empty())
 					insufficient = true;
-				queue.push(*i);
+				sourceVertices.push(*i);
 			}
 		}
 	}
 
 	/* Checks for the existance of loops */
-	if(cnt_visit != V){
+	if(visitedVertices != nrOfVertices){
 		cout << "Incoerente" << '\n';
 		return vector<int> ();
 	}
