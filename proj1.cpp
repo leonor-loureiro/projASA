@@ -141,7 +141,7 @@ void Graph::insertEdge(Edge e){
 
 vector<int> Graph::topologicalSort(){
 
-	vector<int> order; 			//Topologic Ordered vector
+	vector<int> order; 			//Topologically Ordered vector
 	queue<int> sourceVertices; 	// Stores vertices with 0 indegree
 	bool insufficient = false;	// status flag for insufficiente error found
 	int visitedVertices = 0;	// counter of visited vertices
