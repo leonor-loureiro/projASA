@@ -181,7 +181,7 @@ vector<int> Graph::topologicalSort(){
 	}
 
 	/* Checks for case in which there's more than one topological order which
-	generates insufficient error*/
+	 * generates insufficient error*/
 	if(insufficient){
 		cout << "Insuficiente" << '\n';
 		return vector<int> ();
