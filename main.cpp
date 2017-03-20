@@ -16,7 +16,6 @@ int main(int argc, char const *argv[]) {
         // Tratar de erro
     }
 
-
     while(nrOfPairs > 0){
         std::cin >> photo1 >> photo2;
         // photo1 occured before photo2
