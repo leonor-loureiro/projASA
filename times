@@ -1,0 +1,198 @@
+ ------ 
+0-10
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+0-100
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+0-1000
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+0-5000
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.000s
+ ------ 
+0-10000
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.000s
+ ------ 
+0-50000
+
+real	0m0.017s
+user	0m0.016s
+sys	0m0.000s
+ ------ 
+0-100000
+
+real	0m0.034s
+user	0m0.032s
+sys	0m0.000s
+ ------ 
+0-500000
+
+real	0m0.202s
+user	0m0.200s
+sys	0m0.000s
+ ------ 
+0-1000000
+
+real	0m0.426s
+user	0m0.420s
+sys	0m0.004s
+ ------ 
+0-5000000
+
+real	0m2.287s
+user	0m2.252s
+sys	0m0.032s
+ ------ 
+0-10000000
+
+real	0m4.728s
+user	0m4.644s
+sys	0m0.080s
+ ------ 
+1-10
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+1-100
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+1-1000
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+1-5000
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+1-10000
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+1-50000
+
+real	0m0.013s
+user	0m0.012s
+sys	0m0.000s
+ ------ 
+1-100000
+
+real	0m0.029s
+user	0m0.028s
+sys	0m0.000s
+ ------ 
+1-500000
+
+real	0m0.169s
+user	0m0.168s
+sys	0m0.000s
+ ------ 
+1-1000000
+
+real	0m0.315s
+user	0m0.304s
+sys	0m0.008s
+ ------ 
+1-5000000
+
+real	0m1.993s
+user	0m1.952s
+sys	0m0.040s
+ ------ 
+1-10000000
+
+real	0m3.856s
+user	0m3.792s
+sys	0m0.064s
+ ------ 
+2-10
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+2-100
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+2-1000
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+2-5000
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+2-10000
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s
+ ------ 
+2-50000
+
+real	0m0.015s
+user	0m0.012s
+sys	0m0.000s
+ ------ 
+2-100000
+
+real	0m0.030s
+user	0m0.028s
+sys	0m0.000s
+ ------ 
+2-500000
+
+real	0m0.180s
+user	0m0.176s
+sys	0m0.000s
+ ------ 
+2-1000000
+
+real	0m0.372s
+user	0m0.352s
+sys	0m0.016s
+ ------ 
+2-5000000
+
+real	0m2.168s
+user	0m2.140s
+sys	0m0.028s
+ ------ 
+2-10000000
+
+real	0m4.513s
+user	0m4.436s
+sys	0m0.076s
