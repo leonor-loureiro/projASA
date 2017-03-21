@@ -1,75 +1,93 @@
  ------ 
-0-10
-
-real	0m0.004s
-user	0m0.000s
-sys	0m0.000s
- ------ 
 0-100
 
-real	0m0.003s
+real	0m0.001s
 user	0m0.000s
 sys	0m0.000s
  ------ 
 0-1000
 
-real	0m0.003s
+real	0m0.001s
 user	0m0.000s
 sys	0m0.000s
  ------ 
 0-5000
 
-real	0m0.006s
-user	0m0.004s
+real	0m0.002s
+user	0m0.000s
 sys	0m0.000s
  ------ 
 0-10000
 
-real	0m0.005s
-user	0m0.004s
+real	0m0.004s
+user	0m0.000s
 sys	0m0.000s
  ------ 
 0-50000
 
-real	0m0.017s
-user	0m0.016s
+real	0m0.022s
+user	0m0.020s
 sys	0m0.000s
  ------ 
 0-100000
 
-real	0m0.034s
-user	0m0.032s
+real	0m0.050s
+user	0m0.048s
+sys	0m0.000s
+ ------ 
+0-250000
+
+real	0m0.090s
+user	0m0.088s
 sys	0m0.000s
  ------ 
 0-500000
 
-real	0m0.202s
+real	0m0.207s
 user	0m0.200s
-sys	0m0.000s
+sys	0m0.004s
+ ------ 
+0-750000
+
+real	0m0.320s
+user	0m0.308s
+sys	0m0.008s
  ------ 
 0-1000000
 
-real	0m0.426s
-user	0m0.420s
-sys	0m0.004s
+real	0m0.479s
+user	0m0.452s
+sys	0m0.024s
+ ------ 
+0-2500000
+
+real	0m1.117s
+user	0m1.096s
+sys	0m0.020s
  ------ 
 0-5000000
 
-real	0m2.287s
-user	0m2.252s
-sys	0m0.032s
+real	0m2.309s
+user	0m2.260s
+sys	0m0.048s
+ ------ 
+0-7500000
+
+real	0m3.507s
+user	0m3.452s
+sys	0m0.052s
  ------ 
 0-10000000
 
-real	0m4.728s
-user	0m4.644s
-sys	0m0.080s
+real	0m4.622s
+user	0m4.564s
+sys	0m0.056s
  ------ 
-1-10
+0-50000000
 
-real	0m0.001s
-user	0m0.000s
-sys	0m0.000s
+real	0m25.047s
+user	0m24.648s
+sys	0m0.396s
  ------ 
 1-100
 
@@ -91,51 +109,75 @@ sys	0m0.000s
  ------ 
 1-10000
 
-real	0m0.004s
+real	0m0.005s
 user	0m0.000s
-sys	0m0.000s
+sys	0m0.004s
  ------ 
 1-50000
 
-real	0m0.013s
-user	0m0.012s
+real	0m0.020s
+user	0m0.020s
 sys	0m0.000s
  ------ 
 1-100000
 
-real	0m0.029s
-user	0m0.028s
+real	0m0.041s
+user	0m0.040s
+sys	0m0.000s
+ ------ 
+1-250000
+
+real	0m0.098s
+user	0m0.096s
 sys	0m0.000s
  ------ 
 1-500000
 
-real	0m0.169s
-user	0m0.168s
+real	0m0.217s
+user	0m0.212s
+sys	0m0.004s
+ ------ 
+1-750000
+
+real	0m0.260s
+user	0m0.256s
 sys	0m0.000s
  ------ 
 1-1000000
 
-real	0m0.315s
-user	0m0.304s
-sys	0m0.008s
+real	0m0.354s
+user	0m0.336s
+sys	0m0.016s
+ ------ 
+1-2500000
+
+real	0m0.961s
+user	0m0.948s
+sys	0m0.012s
  ------ 
 1-5000000
 
-real	0m1.993s
-user	0m1.952s
-sys	0m0.040s
+real	0m1.690s
+user	0m1.672s
+sys	0m0.016s
+ ------ 
+1-7500000
+
+real	0m2.588s
+user	0m2.552s
+sys	0m0.032s
  ------ 
 1-10000000
 
-real	0m3.856s
-user	0m3.792s
-sys	0m0.064s
+real	0m4.122s
+user	0m4.060s
+sys	0m0.060s
  ------ 
-2-10
+1-50000000
 
-real	0m0.001s
-user	0m0.000s
-sys	0m0.000s
+real	0m22.176s
+user	0m21.800s
+sys	0m0.376s
  ------ 
 2-100
 
@@ -145,13 +187,13 @@ sys	0m0.000s
  ------ 
 2-1000
 
-real	0m0.002s
+real	0m0.001s
 user	0m0.000s
 sys	0m0.000s
  ------ 
 2-5000
 
-real	0m0.003s
+real	0m0.002s
 user	0m0.000s
 sys	0m0.000s
  ------ 
@@ -163,36 +205,66 @@ sys	0m0.000s
  ------ 
 2-50000
 
-real	0m0.015s
+real	0m0.016s
 user	0m0.012s
 sys	0m0.000s
  ------ 
 2-100000
 
-real	0m0.030s
-user	0m0.028s
+real	0m0.035s
+user	0m0.032s
 sys	0m0.000s
+ ------ 
+2-250000
+
+real	0m0.079s
+user	0m0.072s
+sys	0m0.004s
  ------ 
 2-500000
 
-real	0m0.180s
-user	0m0.176s
+real	0m0.183s
+user	0m0.180s
 sys	0m0.000s
+ ------ 
+2-750000
+
+real	0m0.289s
+user	0m0.280s
+sys	0m0.008s
  ------ 
 2-1000000
 
-real	0m0.372s
-user	0m0.352s
+real	0m0.399s
+user	0m0.388s
+sys	0m0.008s
+ ------ 
+2-2500000
+
+real	0m1.046s
+user	0m1.028s
 sys	0m0.016s
  ------ 
 2-5000000
 
-real	0m2.168s
-user	0m2.140s
-sys	0m0.028s
+real	0m2.153s
+user	0m2.108s
+sys	0m0.044s
+ ------ 
+2-7500000
+
+real	0m3.302s
+user	0m3.260s
+sys	0m0.040s
  ------ 
 2-10000000
 
-real	0m4.513s
-user	0m4.436s
-sys	0m0.076s
+real	0m4.492s
+user	0m4.432s
+sys	0m0.060s
+ ------ 
+2-50000000
+
+real	0m24.025s
+user	0m23.616s
+sys	0m0.408s
